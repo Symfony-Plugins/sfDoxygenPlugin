@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.4.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>sfDoxygenPlugin</name>
+ <channel>plugins.symfony-project.org</channel>
+ <summary>sfDoxygenPlugin provides you with tasks to generate your sourcecode documentation via Doxygen.</summary>
+ <description>sfDoxygenPlugin provides you with tasks to generate your sourcecode documentation via Doxygen.</description>
+ <lead>
+  <name>Tomasz Ducin</name>
+  <user>tomasz.ducin</user>
+  <email>tomasz.ducin@gmail.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2009-12-03</date>
+ <time>00:27:45</time>
+ <version>
+   <release>1.0.0</release>
+   <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.symfony-project.org/license">MIT license</license>
+ <notes>-</notes>
+ <contents>
+   <dir name="/">
+     <file role="data" name="README" />
+     <file role="data" name="LICENSE" />
+
+     <dir name="config">
+       <file role="data" name="doxygen.ini" />
+       <file role="data" name="doxygen_exclude.txt" />
+     </dir>
+
+     <dir name="lib">
+
+       <dir name="task">
+         <file role="data" name="sfDoxygenInitTask.class.php" />
+         <file role="data" name="sfDoxygenUpdateTask.class.php" />
+         <file role="data" name="sfDoxygenGenerateTask.class.php" />
+       </dir>
+
+     </dir>
+
+   </dir>
+ </contents>
+
+ <dependencies>
+  <required>
+   <php>
+    <min>5.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.1</min>
+   </pearinstaller>
+   <package>
+    <name>symfony</name>
+    <channel>pear.symfony-project.com</channel>
+    <min>1.1.0</min>
+    <max>1.4.0</max>
+   </package>
+  </required>
+ </dependencies>
+
+ <phprelease>
+ </phprelease>
+
+ <changelog>
+ </changelog>
+
+</package>

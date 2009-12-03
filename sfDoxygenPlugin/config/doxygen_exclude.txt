@@ -1,0 +1,4 @@
+lib/vendor
+cache
+plugins
+web

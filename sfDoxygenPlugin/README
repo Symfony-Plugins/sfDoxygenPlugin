@@ -1,0 +1,65 @@
+sfDoxygen plugin
+===============
+
+The `sfDoxygenPlugin` is a symfony plugin that provides tasks to
+generate your sourcecode documentation via Doxygen.
+
+Installation
+------------
+
+  * Install the plugin via the subversion repository.
+
+Configuration files
+-------------------
+
+  * doxygen.cfg - the main doxygen config file
+
+  * doxygen.ini - file used to store your custom doxygen docs configuration
+    options. All the options defined here will be applied to doxygen.cfg when
+    doxygen:update task will be performed (and therefore applied while
+    generating the docs during execution of doxygen:generate).
+
+  * doxygen_exclude.txt - file containing all paths that should be excluded
+    from generating the documentation. Similar to $/config/rsync_exclude.txt.
+
+  * doxygen.xml - specifying the layout. Use this task only once (otherwise 
+    the changes you made will be lost).
+
+  * All files contain default values which are sufficient to perform code
+    documentation generation.
+
+Usage
+-----
+
+  * Execute the tasks bundled with the plugin in the order specified below.
+    The first command creates file structure in $/config/doxygen directory:
+
+        $ ./symfony doxygen:init
+
+  * Next step is to make your custom changes to the config/doxygen.ini file.
+    You may specify all options that would be used by the doxygen tool (few
+    important ones are already defined there, such as PROJECT_NAME). After
+    editing config/doxygen.ini, run the following command to update the
+    doxygen.cfg file. Take a look at official doxygen documentation for more
+    details:
+
+        $ ./symfony doxygen:update
+
+  * And finally, the last step. It will generate the whole documentation
+    in the doc/doxygen directory (of course you can change it).
+
+        $ ./symfony doxygen:generate
+
+Notes
+-----
+
+  * You need to install doxygen before you can use following plugin. More
+    information can be found here: http://www.stack.nl/~dimitri/doxygen/install.html
+
+  * Remember to add a line to the config/rsync_exclude.txt file to exclude the
+    generated documentation from being sent to the production server.
+
+  * You may configure your vhost to show the doxygen documentation by adding
+    the following code:
+
+        Alias /dox /path_to_my_project/doc/doxygen/html
