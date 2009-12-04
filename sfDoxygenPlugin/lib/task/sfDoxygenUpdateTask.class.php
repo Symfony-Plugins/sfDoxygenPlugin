@@ -13,6 +13,7 @@ class sfDoxygenUpdateTask extends sfBaseTask
    */
   protected function configure()
   {
+    $this->aliases          = array('doxygen-update');
     $this->namespace        = 'doxygen';
     $this->name             = 'update';
     $this->briefDescription = 'Updates doxygen config file';

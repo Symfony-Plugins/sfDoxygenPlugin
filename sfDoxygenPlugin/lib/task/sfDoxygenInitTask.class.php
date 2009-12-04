@@ -13,6 +13,7 @@ class sfDoxygenInitTask extends sfBaseTask
    */
   protected function configure()
   {
+    $this->aliases          = array('doxygen-init');
     $this->namespace        = 'doxygen';
     $this->name             = 'init';
     $this->briefDescription = 'Creates doxygen config files needed to generate the docs';
@@ -32,7 +33,13 @@ EOF;
     $plugins_config_dir = sfConfig::get('sf_plugins_dir').'/sfDoxygenPlugin/config';
     sfFilesystem::sh("mkdir -p {$doxygen_config_dir}");
     sfFilesystem::sh("doxygen -g {$doxygen_config_dir}/doxygen.cfg");
-    sfFilesystem::sh("doxygen -l {$doxygen_config_dir}/doxygen.xml");
+    $version_string = sfFilesystem::sh("doxygen --version");
+    $version_array = explode('.', $version_string);
+    // checks if doxygen version is 1.5.7 or above
+    if ($version_array[1] >= 6 || ($version_array[1] == 5 && $version_array[2] >=7))
+    {
+      sfFilesystem::sh("doxygen -l {$doxygen_config_dir}/doxygen.xml");
+    }
     sfFilesystem::sh("cp {$plugins_config_dir}/doxygen.ini {$doxygen_config_dir}/doxygen.ini");
     sfFilesystem::sh("cp {$plugins_config_dir}/doxygen_exclude.txt {$doxygen_config_dir}/doxygen_exclude.txt");
   }

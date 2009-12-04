@@ -7,7 +7,9 @@ generate your sourcecode documentation via Doxygen.
 Installation
 ------------
 
-  * Install the plugin via the subversion repository.
+  * Install the plugin via the subversion repository or by using the command:
+  
+        ./symfony plugin:install sfDoxygenPlugin
 
 Configuration files
 -------------------
@@ -22,8 +24,8 @@ Configuration files
   * doxygen_exclude.txt - file containing all paths that should be excluded
     from generating the documentation. Similar to $/config/rsync_exclude.txt.
 
-  * doxygen.xml - specifying the layout. Use this task only once (otherwise 
-    the changes you made will be lost).
+  * doxygen.xml - specifying the layout. Used within Doxygen version 1.5.7
+    or above.
 
   * All files contain default values which are sufficient to perform code
     documentation generation.
@@ -32,7 +34,8 @@ Usage
 -----
 
   * Execute the tasks bundled with the plugin in the order specified below.
-    The first command creates file structure in $/config/doxygen directory:
+    The first command creates file structure in $/config/doxygen directory 
+    (use this task only once otherwise the changes you made will be lost):
 
         $ ./symfony doxygen:init
 
@@ -49,6 +52,10 @@ Usage
     in the doc/doxygen directory (of course you can change it).
 
         $ ./symfony doxygen:generate
+
+  * Additionally you may check the version of Doxygen installed using command:
+  
+        $ ./symfony doxygen:version
 
 Notes
 -----

@@ -6,7 +6,7 @@
  <description>sfDoxygenPlugin provides you with tasks to generate your sourcecode documentation via Doxygen.</description>
  <lead>
   <name>Tomasz Ducin</name>
-  <user>tomasz.ducin</user>
+  <user>tkoomzaaskz</user>
   <email>tomasz.ducin@gmail.com</email>
   <active>yes</active>
  </lead>
@@ -66,6 +66,41 @@
  </phprelease>
 
  <changelog>
+  <release>
+    <version>
+      <release>1.0.1</release>
+      <api>1.0.0</api>
+    </version>
+    <stability>
+     <release>stable</release>
+     <api>stable</api>
+    </stability>
+    <license uri="http://www.symfony-project.org/license">MIT license</license>
+    <date>2009-12-04</date>
+    <license>MIT</license>
+    <notes>
+      * fixed mkdir bug (added option -p to allow doxygen:init re-run)
+      * fixed doxygen option LAYOUT_FILE bug for doxygen releases before 1.5.7 when the featur was added
+      * added version check task
+      * added command aliases
+    </notes>
+  </release>
+  <release>
+    <version>
+      <release>1.0.0</release>
+      <api>1.0.0</api>
+    </version>
+    <stability>
+     <release>stable</release>
+     <api>stable</api>
+    </stability>
+    <license uri="http://www.symfony-project.org/license">MIT license</license>
+    <date>2009-12-03</date>
+    <license>MIT</license>
+    <notes>
+      * initial release
+    </notes>
+  </release>
  </changelog>
 
 </package>

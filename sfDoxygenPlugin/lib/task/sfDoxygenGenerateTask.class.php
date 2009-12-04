@@ -13,6 +13,7 @@ class sfDoxygenGenerateTask extends sfBaseTask
    */
   protected function configure()
   {
+    $this->aliases          = array('doxygen-generate');
     $this->namespace        = 'doxygen';
     $this->name             = 'generate';
     $this->briefDescription = 'Generates documentation of the project';
