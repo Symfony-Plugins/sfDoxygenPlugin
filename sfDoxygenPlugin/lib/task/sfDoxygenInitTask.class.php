@@ -30,7 +30,7 @@ EOF;
   {
     $doxygen_config_dir = sfConfig::get('sf_config_dir').'/doxygen';
     $plugins_config_dir = sfConfig::get('sf_plugins_dir').'/sfDoxygenPlugin/config';
-    sfFilesystem::sh("mkdir {$doxygen_config_dir}");
+    sfFilesystem::sh("mkdir -p {$doxygen_config_dir}");
     sfFilesystem::sh("doxygen -g {$doxygen_config_dir}/doxygen.cfg");
     sfFilesystem::sh("doxygen -l {$doxygen_config_dir}/doxygen.xml");
     sfFilesystem::sh("cp {$plugins_config_dir}/doxygen.ini {$doxygen_config_dir}/doxygen.ini");
