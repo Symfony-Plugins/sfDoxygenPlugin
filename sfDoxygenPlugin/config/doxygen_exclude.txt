@@ -1,4 +1,7 @@
 lib/vendor
+lib/model/doctrine/base
+lib/model/map
+lib/model/om
 cache
 plugins
 web
