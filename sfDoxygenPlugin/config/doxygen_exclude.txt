@@ -1,3 +1,4 @@
+apps
 cache
 data/symfony
 lib/vendor
