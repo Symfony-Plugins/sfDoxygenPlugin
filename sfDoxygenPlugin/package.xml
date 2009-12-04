@@ -29,7 +29,8 @@
 
      <dir name="config">
        <file role="data" name="doxygen.ini" />
-       <file role="data" name="doxygen_exclude.txt" />
+       <file role="data" name="exclude.txt" />
+       <file role="data" name="exclude_patterns.txt" />
      </dir>
 
      <dir name="lib">
@@ -80,7 +81,7 @@
     <date>2009-12-05</date>
     <license>MIT</license>
     <notes>
-      * added exclude lib/model entries for both propel and doctrine and for data/symfony
+      * added exclude lib/model entries for both propel and doctrine and for data/symfony, test directories
       * added default doxygen.ini option SOURCE_BROWSER - to generate highlighted sources
       * added separated file for EXCLUDE_PATTERNS Doxygen option
     </notes>

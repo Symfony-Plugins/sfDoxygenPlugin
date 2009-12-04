@@ -73,7 +73,7 @@ EOF;
         $opts = explode('=', $line);
         if (isset($ini_content[trim($opts[0])]))
         {
-	  $opt = trim($opts[0]);
+          $opt = trim($opts[0]);
           if ($opt == 'EXCLUDE' || $opt == 'EXCLUDE_PATTERNS')
           {
             $config_content .= $opts[0].'= '.$ini_content[trim($opts[0])]."\n";
@@ -89,10 +89,9 @@ EOF;
         }
       }
     }
+
     // save new doxygen.cfg content
-    $config_fh = fopen($config_file, 'w');
-    fwrite($config_fh, $config_content);
-    fclose($config_fh);
+    file_put_contents($config_file, $config_content);
   }
 
 }

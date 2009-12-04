@@ -8,7 +8,7 @@ Installation
 ------------
 
   * Install the plugin via the subversion repository or by using the command:
-  
+
         ./symfony plugin:install sfDoxygenPlugin
 
 Configuration files
@@ -21,8 +21,12 @@ Configuration files
     doxygen:update task will be performed (and therefore applied while
     generating the docs during execution of doxygen:generate).
 
-  * doxygen_exclude.txt - file containing all paths that should be excluded
-    from generating the documentation. Similar to $/config/rsync_exclude.txt.
+  * exclude.txt - file containing all paths that should be excluded from
+    generating the documentation. Paths existent in this file are concatenated 
+    and put into the EXCLUDE option of doxygen. Similar to $/config/rsync_exclude.txt.
+
+  * exclude_patterns.txt - similar to exclude.txt with the difference that
+    it supports the EXCLUDE_PATTERNS option.
 
   * doxygen.xml - specifying the layout. Used within Doxygen version 1.5.7
     or above.
