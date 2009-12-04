@@ -37,14 +37,23 @@ EOF;
     $ini_file = $doxygen_dir.'/doxygen.ini';
     $ini_content = parse_ini_file($ini_file, true);
 
-    // add input/exclude entries
+    // add INPUT option
     $ini_content['INPUT'] = sfConfig::get('sf_root_dir');
+    // add EXCLUDE option
     $ini_content['EXCLUDE'] = '';
-    $exclude_file = $doxygen_dir.'/doxygen_exclude.txt';
+    $exclude_file = $doxygen_dir.'/exclude.txt';
     $exclude_lines = file($exclude_file, FILE_IGNORE_NEW_LINES);
     foreach($exclude_lines as $line)
     {
         $ini_content['EXCLUDE'] .= $root_dir.'/'.$line.' ';
+    }
+    // add EXCLUDE_PATTERNS option
+    $ini_content['EXCLUDE_PATTERNS'] = '';
+    $exclude_file = $doxygen_dir.'/exclude_patterns.txt';
+    $exclude_lines = file($exclude_file, FILE_IGNORE_NEW_LINES);
+    foreach($exclude_lines as $line)
+    {
+        $ini_content['EXCLUDE_PATTERNS'] .= $line.' ';
     }
 
     // read the doxygen.cfg file
@@ -64,7 +73,8 @@ EOF;
         $opts = explode('=', $line);
         if (isset($ini_content[trim($opts[0])]))
         {
-          if (trim($opts[0]) == 'EXCLUDE')
+	  $opt = trim($opts[0]);
+          if ($opt == 'EXCLUDE' || $opt == 'EXCLUDE_PATTERNS')
           {
             $config_content .= $opts[0].'= '.$ini_content[trim($opts[0])]."\n";
           }

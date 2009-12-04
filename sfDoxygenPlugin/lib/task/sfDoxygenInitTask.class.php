@@ -41,7 +41,8 @@ EOF;
       sfFilesystem::sh("doxygen -l {$doxygen_config_dir}/doxygen.xml");
     }
     sfFilesystem::sh("cp {$plugins_config_dir}/doxygen.ini {$doxygen_config_dir}/doxygen.ini");
-    sfFilesystem::sh("cp {$plugins_config_dir}/doxygen_exclude.txt {$doxygen_config_dir}/doxygen_exclude.txt");
+    sfFilesystem::sh("cp {$plugins_config_dir}/exclude.txt {$doxygen_config_dir}/exclude.txt");
+    sfFilesystem::sh("cp {$plugins_config_dir}/exclude_patterns.txt {$doxygen_config_dir}/exclude_patterns.txt");
   }
 }
 

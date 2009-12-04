@@ -13,7 +13,7 @@
  <date>2009-12-04</date>
  <time>11:00:00</time>
  <version>
-   <release>1.0.2</release>
+   <release>1.0.3</release>
    <api>1.0.0</api>
  </version>
  <stability>
@@ -80,7 +80,9 @@
     <date>2009-12-05</date>
     <license>MIT</license>
     <notes>
-      * added exclude lib/model entries for both propel and doctrine
+      * added exclude lib/model entries for both propel and doctrine and for data/symfony
+      * added default doxygen.ini option SOURCE_BROWSER - to generate highlighted sources
+      * added separated file for EXCLUDE_PATTERNS Doxygen option
     </notes>
   </release>
   <release>
