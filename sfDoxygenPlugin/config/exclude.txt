@@ -2,6 +2,7 @@ apps
 cache
 data/symfony
 lib/vendor
+lib/migration
 lib/form/doctrine/base
 lib/filter/doctrine/base
 lib/model/doctrine/base
