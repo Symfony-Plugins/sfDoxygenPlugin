@@ -61,6 +61,15 @@ Usage
   
         $ ./symfony doxygen:version
 
+Documentation
+-------------
+
+By default, the documentation should include all lib class files created by the
+developer, that is: all non-base model classes (excluding base classes, 
+migration classes, vendor). Moreover, action classes should be included (but
+their templates are set to be excluded).
+
+
 Notes
 -----
 

@@ -68,6 +68,25 @@
  </phprelease>
 
  <changelog>
+ 
+  <release>
+    <version>
+      <release>1.0.4</release>
+      <api>1.0.0</api>
+    </version>
+    <stability>
+     <release>stable</release>
+     <api>stable</api>
+    </stability>
+    <license uri="http://www.symfony-project.org/license">MIT license</license>
+    <date>2009-12-07</date>
+    <license>MIT</license>
+    <notes>
+      * moved all EXCLUDE base directories to EXCLUDE_PATTERNS (and excluded plugin model base classes)
+      * removed apps from EXCLUDE (mistake fixed)
+    </notes>
+  </release>
+
   <release>
     <version>
       <release>1.0.3</release>
@@ -86,6 +105,7 @@
       * added separated file for EXCLUDE_PATTERNS Doxygen option
     </notes>
   </release>
+
   <release>
     <version>
       <release>1.0.2</release>
@@ -102,6 +122,7 @@
       * fixed version task file error
     </notes>
   </release>
+
   <release>
     <version>
       <release>1.0.1</release>
@@ -121,6 +142,7 @@
       * added command aliases
     </notes>
   </release>
+
   <release>
     <version>
       <release>1.0.0</release>
@@ -137,6 +159,7 @@
       * initial release
     </notes>
   </release>
+
  </changelog>
 
 </package>

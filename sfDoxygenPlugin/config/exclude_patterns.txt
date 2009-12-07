@@ -1,3 +1,4 @@
 */.svn/*
 */config/*
 */templates/*
+*/base/Base*
