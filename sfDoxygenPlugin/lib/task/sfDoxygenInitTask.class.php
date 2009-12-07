@@ -18,7 +18,7 @@ class sfDoxygenInitTask extends sfBaseTask
     $this->name             = 'init';
     $this->briefDescription = 'Creates doxygen config files needed to generate the docs';
     $this->detailedDescription = <<<EOF
-The [doxygen:init|INFO] task creates the doxygen config file:
+The [doxygen:init|INFO] task creates the doxygen config directory structure:
 
   [./symfony doxygen:init|INFO]
 EOF;
@@ -29,20 +29,33 @@ EOF;
    */
   protected function execute($arguments = array(), $options = array())
   {
+    // preparing directories
     $doxygen_config_dir = sfConfig::get('sf_config_dir').'/doxygen';
-    $plugins_config_dir = sfConfig::get('sf_plugins_dir').'/sfDoxygenPlugin/config';
-    sfFilesystem::sh("mkdir -p {$doxygen_config_dir}");
+    $plugin_dir = sfConfig::get('sf_plugins_dir').'/sfDoxygenPlugin';
+    $plugin_config_dir = $plugin_dir.'/config';
+
+    // creating doxygen config directory
+    $this->getFilesystem()->mkdirs($doxygen_config_dir);
+
+    // creating main doxygen config file
     sfFilesystem::sh("doxygen -g {$doxygen_config_dir}/doxygen.cfg");
+
+    // checking if doxygen version is 1.5.7 or above
     $version_string = sfFilesystem::sh("doxygen --version");
     $version_array = explode('.', $version_string);
-    // checks if doxygen version is 1.5.7 or above
     if ($version_array[1] >= 6 || ($version_array[1] == 5 && $version_array[2] >=7))
     {
       sfFilesystem::sh("doxygen -l {$doxygen_config_dir}/doxygen.xml");
     }
-    sfFilesystem::sh("cp {$plugins_config_dir}/doxygen.ini {$doxygen_config_dir}/doxygen.ini");
-    sfFilesystem::sh("cp {$plugins_config_dir}/exclude.txt {$doxygen_config_dir}/exclude.txt");
-    sfFilesystem::sh("cp {$plugins_config_dir}/exclude_patterns.txt {$doxygen_config_dir}/exclude_patterns.txt");
+
+    // copying additional files to doxygen config dir
+    $this->getFilesystem()->copy($plugin_config_dir.'/doxygen.ini', $doxygen_config_dir.'/doxygen.ini');
+    $this->getFilesystem()->copy($plugin_config_dir.'/exclude.txt', $doxygen_config_dir.'/exclude.txt');
+    $this->getFilesystem()->copy($plugin_config_dir.'/exclude_patterns.txt', $doxygen_config_dir.'/exclude_patterns.txt');
+
+    // mirroring module skeleton directory
+    $finder = sfFinder::type('any')->discard('.sf');
+    $this->getFilesystem()->mirror($plugin_dir.'/data/skeleton/module', sfConfig::get('sf_data_dir').'/skeleton/module', $finder);
   }
 }
 

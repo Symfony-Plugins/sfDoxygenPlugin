@@ -10,10 +10,10 @@
   <email>tomasz.ducin@gmail.com</email>
   <active>yes</active>
  </lead>
- <date>2009-12-04</date>
+ <date>2009-12-08</date>
  <time>11:00:00</time>
  <version>
-   <release>1.0.3</release>
+   <release>1.0.4</release>
    <api>1.0.0</api>
  </version>
  <stability>
@@ -82,8 +82,10 @@
     <date>2009-12-07</date>
     <license>MIT</license>
     <notes>
+      * added module skeleton overriding
       * moved all EXCLUDE base directories to EXCLUDE_PATTERNS (and excluded plugin model base classes)
       * removed apps from EXCLUDE (mistake fixed)
+      * more code documentation
     </notes>
   </release>
 
