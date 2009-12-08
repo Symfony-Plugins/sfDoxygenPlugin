@@ -86,6 +86,7 @@
       * moved all EXCLUDE base directories to EXCLUDE_PATTERNS (and excluded plugin model base classes)
       * removed apps from EXCLUDE (mistake fixed)
       * more code documentation
+      * changed svn structure
     </notes>
   </release>
 
