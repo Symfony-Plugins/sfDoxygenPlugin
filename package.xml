@@ -10,10 +10,10 @@
   <email>tomasz.ducin@gmail.com</email>
   <active>yes</active>
  </lead>
- <date>2009-12-09</date>
+ <date>2009-12-10</date>
  <time>11:00:00</time>
  <version>
-   <release>1.0.4</release>
+   <release>1.0.5</release>
    <api>1.2.0</api>
  </version>
  <stability>
@@ -86,6 +86,23 @@
  </phprelease>
 
  <changelog>
+
+  <release>
+    <version>
+      <release>1.0.5</release>
+      <api>1.2.0</api>
+    </version>
+    <stability>
+     <release>stable</release>
+     <api>stable</api>
+    </stability>
+    <license uri="http://www.symfony-project.org/license">MIT license</license>
+    <date>2009-12-10</date>
+    <license>MIT</license>
+    <notes>
+      * NOT YET: skeletons for other stuff: admin generators and model
+    </notes>
+  </release>
 
   <release>
     <version>
