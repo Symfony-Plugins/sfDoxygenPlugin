@@ -9,7 +9,7 @@
  * ##MODULE_NAME## actions.
  *
  * @package    ##PROJECT_NAME##
- * @class      ##MODULE_NAME##
+ * @class      ##MODULE_NAME##Actions
  * @author     ##AUTHOR_NAME##
  * @version    SVN: $Id: actions.class.php
  */

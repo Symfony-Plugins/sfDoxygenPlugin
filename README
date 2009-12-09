@@ -40,7 +40,8 @@ Usage
 -----
 
   * Execute the tasks bundled with the plugin in the order specified below.
-    The first command creates file structure in _config/doxygen_ directory 
+    The first command creates file structure in _config/doxygen_ directory
+    and copies modified version of module skeleton into base data directory.
     (use this task only once otherwise the changes you made will be lost):
 
         $ ./symfony doxygen:init
@@ -60,8 +61,28 @@ Usage
         $ ./symfony doxygen:generate
 
   * Additionally you may check the version of doxygen installed using command:
-  
+
         $ ./symfony doxygen:version
+
+Module skeleton
+---------------
+
+Running command _doxygen:init_ creates a subdirectory containing alternative
+skeleton for module generation. The skeleton is stored in _data/skeleton/module_
+directory. The changes are only about the documentation code syntax, which
+should be configured specially for doxygen (there are tiny differences between
+PHPDoc and Doxygen). When a new module is generated within command:
+
+        $ ./symfony generate:module app mod
+
+the framework already uses the new skeleton. This means that if you install
+the plugin and run _doxygen:init_ command before generating any modules, all
+generated modules will have doxygen-documentation-like comments without any
+manual modifications.
+
+By default the __@subpackage__ option is out and it is replaced with
+__@class__. Of course, the best solution is to define your own skeleton
+(if you have any suggestions, don't hesitate to mail me).
 
 Documentation
 -------------
@@ -70,7 +91,6 @@ By default, the documentation should include all lib class files created by the
 developer, that is: all non-base model classes (excluding base classes, 
 migration classes, vendor). Moreover, action classes should be included (but
 their templates are set to be excluded).
-
 
 Notes
 -----

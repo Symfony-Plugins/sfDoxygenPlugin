@@ -1,5 +1,6 @@
 cache
 data/symfony
+data/skeleton
 lib/vendor
 lib/migration
 lib/model/map

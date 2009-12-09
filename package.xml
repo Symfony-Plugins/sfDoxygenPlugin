@@ -10,11 +10,11 @@
   <email>tomasz.ducin@gmail.com</email>
   <active>yes</active>
  </lead>
- <date>2009-12-08</date>
+ <date>2009-12-09</date>
  <time>11:00:00</time>
  <version>
    <release>1.0.4</release>
-   <api>1.0.0</api>
+   <api>1.2.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -31,6 +31,24 @@
        <file role="data" name="doxygen.ini" />
        <file role="data" name="exclude.txt" />
        <file role="data" name="exclude_patterns.txt" />
+     </dir>
+
+     <dir name="data">
+       <dir name="skeleton">
+         <dir name="module">
+           <dir name="module">
+             <dir name="actions">
+               <file role="data" name="actions.class.php" />
+             </dir>
+             <dir name="templates">
+               <file role="data" name="indexSuccess.php" />
+             </dir>
+           </dir>
+           <dir name="test">
+             <file role="data" name="actionsTest.php" />
+           </dir>
+         </dir>
+       </dir>
      </dir>
 
      <dir name="lib">
@@ -68,7 +86,7 @@
  </phprelease>
 
  <changelog>
- 
+
   <release>
     <version>
       <release>1.0.4</release>
@@ -79,11 +97,11 @@
      <api>stable</api>
     </stability>
     <license uri="http://www.symfony-project.org/license">MIT license</license>
-    <date>2009-12-07</date>
+    <date>2009-12-09</date>
     <license>MIT</license>
     <notes>
       * added module skeleton overriding
-      * moved all EXCLUDE base directories to EXCLUDE_PATTERNS (and excluded plugin model base classes)
+      * moved all EXCLUDE model/base directories to EXCLUDE_PATTERNS (and excluded plugin model base classes)
       * removed apps from EXCLUDE (mistake fixed)
       * more code documentation
       * changed svn structure
