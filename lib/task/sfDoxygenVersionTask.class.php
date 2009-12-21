@@ -30,7 +30,7 @@ EOF;
    */
   protected function execute($arguments = array(), $options = array())
   {
-    $result = $this->getFilesystem()->sh('doxygen --version');
+    $result = $this->getFilesystem()->execute('doxygen --version');
     echo 'Doxygen version: '.$result;
   }
 

@@ -38,14 +38,14 @@ EOF;
     $this->getFilesystem()->mkdirs($doxygen_config_dir);
 
     // creating main doxygen config file
-    $this->getFilesystem()->sh("doxygen -g {$doxygen_config_dir}/doxygen.cfg");
+    $this->getFilesystem()->execute("doxygen -g {$doxygen_config_dir}/doxygen.cfg");
 
     // checking if doxygen version is 1.5.7 or above
-    $version_string = $this->getFilesystem()->sh("doxygen --version");
+    $version_string = $this->getFilesystem()->execute("doxygen --version");
     $version_array = explode('.', $version_string);
     if ($version_array[1] >= 6 || ($version_array[1] == 5 && $version_array[2] >=7))
     {
-      $this->getFilesystem()->sh("doxygen -l {$doxygen_config_dir}/doxygen.xml");
+      $this->getFilesystem()->execute("doxygen -l {$doxygen_config_dir}/doxygen.xml");
     }
 
     // copying additional files to doxygen config dir

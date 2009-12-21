@@ -31,8 +31,12 @@ EOF;
   protected function execute($arguments = array(), $options = array())
   {
     $config_file = sfConfig::get('sf_config_dir').'/doxygen/doxygen.cfg';
-    
-    $this->getFilesystem()->sh('doxygen '.$config_file);
+
+    // doc/ directory has been removed from symfony since 1.3 version
+    $this->getFilesystem()->mkdirs(sfConfig::get('sf_root_dir').'/doc');
+
+    // documentation generation
+    $this->getFilesystem()->execute('doxygen '.$config_file);
   }
 
 }
