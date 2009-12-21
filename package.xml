@@ -101,13 +101,13 @@
     <date>2009-12-21</date>
     <license>MIT</license>
     <notes>
-      * plugin version for sym
+      * plugin version for symfony version 1.4
     </notes>
   </release>
 
   <release>
     <version>
-      <release>1.0.4</release>fony 1.4
+      <release>1.0.4</release>
       <api>1.0.0</api>
     </version>
     <stability>

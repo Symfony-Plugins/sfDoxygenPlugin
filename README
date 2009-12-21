@@ -1,20 +1,21 @@
 sfDoxygenPlugin
 ===============
 
-The `sfDoxygenPlugin` is a symfony plugin that provides tasks to
-generate your sourcecode documentation via doxygen tool.
+The `sfDoxygenPlugin` is a symfony plugin that provides tasks to generate your
+sourcecode documentation via doxygen tool.
 
 Installation
-------------
+============
 
   * Install the plugin via the subversion repository or by using the command:
 
         ./symfony plugin:install sfDoxygenPlugin
 
 Configuration files
--------------------
+===================
 
-Below there is a list of files that are created after running _doxygen-init_ task under
+Below there is a list of files that are created after running _doxygen-init_
+task under
 
   * **doxygen.cfg** - the main doxygen config file
 
@@ -25,7 +26,8 @@ Below there is a list of files that are created after running _doxygen-init_ tas
 
   * **exclude.txt** - file containing all paths that should be excluded from
     generating the documentation. Paths existent in this file are concatenated 
-    and put into the _EXCLUDE_ option of doxygen. Similar to _config/rsync_exclude.txt_.
+    and put into the _EXCLUDE_ option of doxygen. Similar to
+ _  config/rsync_exclude.txt_.
 
   * **exclude_patterns.txt** - similar to _exclude.txt_ with the difference that
     it supports the _EXCLUDE_PATTERNS_ option.
@@ -37,7 +39,7 @@ All files contain default values which are sufficient to perform code
 documentation generation.
 
 Usage
------
+=====
 
   * Execute the tasks bundled with the plugin in the order specified below.
     The first command creates file structure in _config/doxygen_ directory
@@ -56,7 +58,8 @@ Usage
         $ ./symfony doxygen:update
 
   * And finally, the last step. It will generate the whole documentation
-    in the _doc/doxygen_ directory (of course you can change it).
+    in the _doc/doxygen_ directory (of course you can change it). The _doc_
+    directory was removed from symfony 1.3, but the plugin creates it on it own:
 
         $ ./symfony doxygen:generate
 
@@ -65,7 +68,7 @@ Usage
         $ ./symfony doxygen:version
 
 Module skeleton
----------------
+===============
 
 Running command _doxygen:init_ creates a subdirectory containing alternative
 skeleton for module generation. The skeleton is stored in _data/skeleton/module_
@@ -85,7 +88,7 @@ __@class__. Of course, the best solution is to define your own skeleton
 (if you have any suggestions, don't hesitate to mail me).
 
 Documentation
--------------
+=============
 
 By default, the documentation should include all lib class files created by the
 developer, that is: all non-base model classes (excluding base classes, 
@@ -93,10 +96,11 @@ migration classes, vendor). Moreover, action classes should be included (but
 their templates are set to be excluded).
 
 Notes
------
+=====
 
   * You need to install _doxygen_ before you can use following plugin. More
-    information can be found at the [doxygen documentation](http://www.stack.nl/~dimitri/doxygen/install.html)
+    information can be found at the
+    [doxygen documentation](http://www.stack.nl/~dimitri/doxygen/install.html)
 
   * Remember to add a line to the _config/rsync_exclude.txt_ file to exclude the
     generated documentation from being sent to the production server.
