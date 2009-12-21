@@ -30,7 +30,7 @@ EOF;
    */
   protected function execute($arguments = array(), $options = array())
   {
-    $result = sfFilesystem::sh('doxygen --version');
+    $result = $this->getFilesystem()->sh('doxygen --version');
     echo 'Doxygen version: '.$result;
   }
 

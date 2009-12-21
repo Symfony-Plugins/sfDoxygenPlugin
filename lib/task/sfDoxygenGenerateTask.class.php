@@ -31,7 +31,8 @@ EOF;
   protected function execute($arguments = array(), $options = array())
   {
     $config_file = sfConfig::get('sf_config_dir').'/doxygen/doxygen.cfg';
-    sfFilesystem::sh('doxygen '.$config_file);
+    
+    $this->getFilesystem()->sh('doxygen '.$config_file);
   }
 
 }
