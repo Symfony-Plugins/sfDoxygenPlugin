@@ -30,8 +30,9 @@ EOF;
    */
   protected function execute($arguments = array(), $options = array())
   {
+      echo "DUPA";
     $result = $this->getFilesystem()->execute('doxygen --version');
-    echo 'Doxygen version: '.$result;
+    echo 'Doxygen version: '.$result[0];
   }
 
 }
